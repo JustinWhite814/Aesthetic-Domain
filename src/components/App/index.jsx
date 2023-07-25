@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Gallery from '../Gallery'
 import './styles.css'
 
 export default function App() {
@@ -22,8 +23,7 @@ export default function App() {
 
     return (
         <>
-            <h1>Aesthetic Domain</h1>
-            {artworks.length > 0 ? <img src={artworks[1].images.web.url} /> : <p>Your artwork is loading...</p>}
+            <Gallery artworks={artworks} />
         </>
     )
 }
