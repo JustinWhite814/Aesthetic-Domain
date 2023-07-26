@@ -54,6 +54,25 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+figure {
+  border: 2px solid white;
+  border-radius: 2px;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 1rem;
+  width: 25vh;
+  min-width: 250px;
+  cursor: pointer;
+}
+figure img {
+  width: calc(100% - 2rem);
+}
 
 @media (prefers-color-scheme: light) {
   :root {
