@@ -1,5 +1,5 @@
 # Aesthetic Domain
-<img src="https://i.imgur.com/074KHaW.png" width='100%'>
+<img src="https://i.imgur.com/FKmvXhB.jpg" width='100%'>
 Welcome to Aesthetic Domain! I created a virtual art museum called Aesthetic Domain! This app had quite a bit of moving parts! 
 
 
