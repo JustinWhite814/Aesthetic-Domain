@@ -4,7 +4,7 @@ import HomePage from '../HomePage'
 import DetailsPage from '../DetailsPage'
 import SearchPage from '../SearchPage'
 import NotFoundPage from '../NotFoundPage'
-import './styles.css'
+
 
 export default function App() {
     // Store API data here

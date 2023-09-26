@@ -32,7 +32,7 @@ app.use(express.json())
 /* Mount routes
 ---------------------------------------------------------- */
 // This tells our app to look at the `controllers/comments.js` file 
-// to handle all routes that begin with `localhost:3000/api/comments`
+// to handle all routes that begin with `localhost:3000/api/comments or something/api/commentss`
 app.use('/api/comments', commentsCtrl)
 
 
