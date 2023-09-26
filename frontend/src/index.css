@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(0deg, rgba(40, 40, 41, 1) 0%, rgba(121, 121, 128, 1) 72%);
+    overflow: overlay;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Scrollbar */
+*::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+/* Scrollbar thumb */
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+figure {
+    height: 30vh;
+    width: calc(12rem + 2vw);
+    min-height: 200px;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+.gallery figure img {
+    width: calc(100% - 2rem);
+    height: 16vh !important;
+    min-height: 100px;
+}
+
+
+.page-controls {
+    padding: 2rem 5rem 1rem 5rem;
+    display: flex;
+    justify-content: space-between;
+}
