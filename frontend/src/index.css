@@ -11,7 +11,7 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(0deg, rgb(204, 204, 218) 0%, rgb(5, 5, 5) 72%);
+    background: linear-gradient(4deg, rgb(204, 204, 218) 0%, rgb(20, 0, 0) 72%);
     overflow: overlay;
     overflow-x: hidden;
 }

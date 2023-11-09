@@ -1,16 +1,30 @@
 import { useEffect, useState } from 'react'
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import HomePage from '../HomePage'
 import DetailsPage from '../DetailsPage'
 import SearchPage from '../SearchPage'
 import NotFoundPage from '../NotFoundPage'
+import AuthFormPage from '../AuthFormPage'
+import Navbar from '../Navbar';
 
 
 export default function App() {
     // Store API data here
     const [artworks, setArtworks] = useState([])
     const [detailsData, setDetailsData] = useState({})
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // Set this state based on your login logic
+    const navigate = useNavigate();
 
+    const handleLogout = () => {
+      // Clear the user token from local storage
+      localStorage.removeItem('userToken');
+      
+      // Update the authentication state
+      setIsLoggedIn(false);
+  
+      // Redirect the user to the login page or another appropriate page
+      navigate('/auth/login');
+    };
     // Define an async function to query the API & JSONify the response
     async function getData(url) {
         const res = await fetch(url)
@@ -25,26 +39,8 @@ export default function App() {
 
     return (
         <>
-            <nav className="bg-gray-800 shadow-lg">
-                <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                    <div className="relative flex items-center justify-between h-16">
-                        <div className="flex-shrink-0">
-                            <Link to="/">
-                                <h2 className="text-white font-bold text-2xl">Aesthetic Domain</h2>
-                            </Link>
-                        </div>
-                        <div className="flex-grow">
-                            <ul className="flex justify-end text-gray-300 text-lg font-medium">
-                                <li>
-                                    <Link to="/search">
-                                        <h4 className="px-3 py-2 hover:text-white">Search for Artwork</h4>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+            <Navbar isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
+
 
             <Routes>
                 <Route path="/" element={
@@ -58,6 +54,7 @@ export default function App() {
                 <Route path="/details" element={
                     <DetailsPage {...detailsData} updateDetails={setDetailsData} />
                 } />
+                <Route path="/auth/:formType" element={<AuthFormPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
                 <Route path="/*" element={<NotFoundPage />} />
             </Routes>
         </>

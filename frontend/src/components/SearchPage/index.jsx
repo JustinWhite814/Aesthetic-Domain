@@ -51,7 +51,7 @@ export default function SearchPage(props) {
                 />
                 <button
                     type="submit"
-                    className="mx-1 px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800 bg-gray-700 rounded transition-all duration-200"
+                    className="mx-1 px-4 py-2 text-gray-300 hover:text-white hover:bg-black-800 bg-gray-700 rounded transition-all duration-200"
                 >
                     Search
                 </button>
