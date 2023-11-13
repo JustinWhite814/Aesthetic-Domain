@@ -14,6 +14,10 @@ export default function AuthFormPage({setIsLoggedIn}) {
     const handleInputChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     };
+
+   
+  
+    
     // Execute auth logic on form submit
     async function handleSubmit(event) {
         // prevent the page from refreshing when the form is submitted

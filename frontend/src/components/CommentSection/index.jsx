@@ -11,9 +11,14 @@ export default function commentSection({ artworkId }) {
         content: ''
     })
 
+    const authHeader = {
+        headers: {
+          Authorization: localStorage.getItem('userToken'),
+        },
+      };
     // Query the database for all comments that pertain to this artwork
     useEffect(() => {
-        getComments(artworkId)
+        getComments(artworkId, authHeader)
             .then(comments => setComments(comments))
     }, [])
 
@@ -36,7 +41,7 @@ export default function commentSection({ artworkId }) {
         getComments(artworkId)
             .then(newCommentData => setComments(newCommentData))
     }
-
+    
     // Execute form submission logic
     function handleSubmit(event) {
         // prevent the page from reloading
@@ -49,7 +54,7 @@ export default function commentSection({ artworkId }) {
         // close the form
         setShowCreateForm(false)
         // create the comment in the backend
-        postComment({ ...createFormData, artworkId: artworkId })
+        postComment({ ...createFormData, artworkId: artworkId}, authHeader)
             .then(() => refreshComments())
     }
 

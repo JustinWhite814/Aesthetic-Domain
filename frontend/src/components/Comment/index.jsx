@@ -7,7 +7,11 @@ export default function Comment({ data, refreshComments }) {
         name: data.name,
         content: data.content
     })
-
+    const authHeader = {
+        headers: {
+          Authorization: localStorage.getItem('userToken'),
+        },
+      };
     // Update the form fields as the user types
     function handleInputChange(event) {
         setEditFormData({
@@ -23,13 +27,13 @@ export default function Comment({ data, refreshComments }) {
         // close the form
         setShowEditForm(false)
         // update the comment in the backend
-        updateComment(editFormData, data._id)
+        updateComment(editFormData, data._id, authHeader)
             .then(() => refreshComments())
     }
 
     // Delete a comment
     function handleDelete() {
-        deleteComment(data._id)
+        deleteComment(data._id, authHeader)
             .then(() => refreshComments())
     }
 
