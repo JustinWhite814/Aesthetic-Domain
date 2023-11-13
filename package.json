@@ -5,10 +5,7 @@
   "scripts": {
     "backend": "nodemon backend/server.js",
     "frontend": "vite",
-    "build": "vite build",
-    "start": "vite build && node backend/server.js",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "start": "vite build && node backend/server.js"
   },
   "dependencies": {
     "@types/react": "^18.2.15",
