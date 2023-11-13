@@ -31,14 +31,17 @@ const authMiddleware = (req, res, next) => {
         try {
             // Decode the token using the secret key and add the decoded payload to the request object
             const decodedToken = jwt.decode(token, config.jwtSecret);
+            console.log('Decoded Token:', decodedToken);
             req.user = decodedToken;
             next();
         } catch (err) {
             // Return an error if the token is invalid
+            console.error('Error decoding token:', err);
             res.status(401).json({ message: 'Invalid token' });
         }
     } else {
         // Return an error if the 'Authorization' header is missing or has the wrong format
+        console.error('Token not present in headers');
         res.status(401).json({ message: 'Missing or invalid Authorization header' });
     }
 };
