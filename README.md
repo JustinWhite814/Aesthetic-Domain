@@ -1,6 +1,9 @@
 # Aesthetic Domain
 <img src="https://i.imgur.com/FKmvXhB.jpg" width='100%'>
-Welcome to Aesthetic Domain! I created a virtual art museum called Aesthetic Domain! This app had quite a bit of moving parts! 
+
+[Live Link](https://aesthetic-domain-aec98c5c79c3.herokuapp.com/)
+
+Welcome to Aesthetic Domain! I created a virtual art museum called Aesthetic Domain! This app has quite a bit of moving parts! 
 
 
 ## MVP
@@ -13,7 +16,11 @@ Welcome to Aesthetic Domain! I created a virtual art museum called Aesthetic Dom
 * Logged in users will be able to browse the museum, react to artwork, and add comments. Additionally, they will be able to edit or delete their own comments
 * Style the site with [Tailwind CSS](https://tailwindcss.com/)
 
-
+## Installation Instructions
+* Fork and Clone this repo
+* CD into the cloned repository
+* npm i
+* head over to your browser and open it up there
 
 ## Technologies Used
 * REACT
